@@ -2,11 +2,6 @@
   "extends": "@libs/tsconfig-lib",
   "compilerOptions": {
     "rootDir": ".",
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["src/*"],
-      "#/*": ["tests/*"]
-    },
     "outDir": "./dist",
     "declaration": true,
     "sourceMap": true
