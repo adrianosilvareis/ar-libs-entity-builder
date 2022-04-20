@@ -15,6 +15,7 @@ export abstract class Builder<T, TBuilder extends Builder<T, TBuilder>> {
 
   public with<K extends keyof T>(key: K, value: T[K]): TBuilder {
     return this.newBuilder((entity) => {
+      // eslint-disable-next-line no-param-reassign
       entity[key] = value;
     });
   }
@@ -23,6 +24,7 @@ export abstract class Builder<T, TBuilder extends Builder<T, TBuilder>> {
     if (quantity === undefined) {
       const min = 2;
       const max = 6;
+      // eslint-disable-next-line no-param-reassign
       quantity = Math.floor(Math.random() * (max - min + 1) + min);
     }
     return Array.from({ length: quantity }, () => this.build());
